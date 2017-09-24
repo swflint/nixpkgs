@@ -83,6 +83,13 @@ in {
                 policy, signal strength, etc.
               '';
             };
+            # keyManagement = mkOption {
+            #   type = types.nullOr types.str;
+            #   default = null;
+            #   description = ''
+            #     Foo
+            #   '';
+            # };
           };
         });
         description = ''
