@@ -12,12 +12,13 @@ let
       psk = if networkConfig.psk != null
         then ''"${networkConfig.psk}"''
         else networkConfig.pskRaw;
-      priority = networkConfig.priority;
+  priority = networkConfig.priority;
+  keyManagement = networkConfig.keyManagement
     in ''
       network={
         ssid="${ssid}"
         ${optionalString (psk != null) ''psk=${psk}''}
-        ${optionalString (psk == null) ''key_mgmt=NONE''}
+        key_mgmt=${keyManagement}
         ${optionalString (priority != null) ''priority=${toString priority}''}
       }
     '') cfg.networks)}
@@ -83,13 +84,15 @@ in {
                 policy, signal strength, etc.
               '';
             };
-            # keyManagement = mkOption {
-            #   type = types.nullOr types.str;
-            #   default = null;
-            #   description = ''
-            #     Foo
-            #   '';
-            # };
+            keyManagement = mkOption {
+              type = types.str;
+              default = "NONE";
+              description = ''
+                By default, use no key management, otherwise, use the specified key
+                manament system.  Valid options include WPA-PSK, WPA-EAP, IEEE8021X,
+                NONE, or any combination of these.
+              '';
+            };
           };
         });
         description = ''
