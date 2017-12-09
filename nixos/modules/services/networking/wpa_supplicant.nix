@@ -85,12 +85,117 @@ in {
               '';
             };
             keyManagement = mkOption {
-              type = types.str;
-              default = "NONE";
+              type = types.nullOr types.str;
+              default = null;
               description = ''
                 By default, use no key management, otherwise, use the specified key
                 manament system.  Valid options include WPA-PSK, WPA-EAP, IEEE8021X,
                 NONE, or any combination of these.
+              '';
+            };
+            pairwise = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+
+              '';
+            };
+            eap = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+
+              '';
+            };
+            identity = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            caCert = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            clientCert = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            privateKey = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            privateKeyPassword = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            password = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            anonymousIdentity = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            eapolFlags = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            phase1 = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            caCert2 = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            }
+            clientCert2 = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            privateKey2 = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
+              '';
+            };
+            privateKey2Password = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+                
               '';
             };
           };
