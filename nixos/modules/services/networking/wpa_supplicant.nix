@@ -94,6 +94,13 @@ in {
               '';
             };
           };
+          pairwise = mkOption {
+              type = types.nullOr types.str;
+              default = null;
+              description = ''
+
+              '';
+            }; 
         });
         description = ''
           The network definitions to automatically connect to when
