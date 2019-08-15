@@ -1,6 +1,6 @@
 { stdenv, fetchFromGitHub, python3Packages }:
 
-python3Packages.buildPythonPackage rec {
+python3Packages.buildPythonApplication rec {
 
   version = "0.4";
   name = "lice-${version}";
