@@ -7247,6 +7247,8 @@ self: super: with self; {
 
   outcome = callPackage ../development/python-modules/outcome { };
 
+  outdated = callPackage ../development/python-modules/outdated { };
+
   ovh = callPackage ../development/python-modules/ovh { };
 
   ovmfvartool = callPackage ../development/python-modules/ovmfvartool { };
